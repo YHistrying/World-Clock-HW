@@ -21,6 +21,9 @@ setInterval(updateClock, 1000);
 
 function changeCity(event) {
   let cityTimeZone = event.target.value;
+  if (cityTimeZone === "current") {
+    cityTimeZone = moment.tz.guess();
+  }
   let cityName = cityTimeZone.split("/")[1];
   let cityElement = document.querySelector("#chosen-city");
   let cityTimeNow = moment().tz(cityTimeZone);
