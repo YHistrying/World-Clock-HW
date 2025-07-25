@@ -14,6 +14,22 @@ function updateClock() {
   tokyoTimeElement.innerHTML = tokyoTime.format(
     "hh:mm:ss [<small>]A[</small>]"
   );
+
+  let sydneyDateElement = document.querySelector("#sydney .date");
+  let sydneyTimeElement = document.querySelector("#sydney .time");
+  let sydneyTime = moment().tz("Australia/Sydney");
+  sydneyDateElement.innerHTML = sydneyTime.format("MMMM Do YYYY");
+  sydneyTimeElement.innerHTML = sydneyTime.format(
+    "hh:mm:ss [<small>]A[</small>]"
+  );
+
+  let berlinDateElement = document.querySelector("#berlin .date");
+  let berlinTimeElement = document.querySelector("#berlin .time");
+  let berlinTime = moment().tz("Europe/Berlin");
+  berlinDateElement.innerHTML = berlinTime.format("MMMM Do YYYY");
+  berlinTimeElement.innerHTML = berlinTime.format(
+    "hh:mm:ss [<small>]A[</small>]"
+  );
 }
 
 updateClock();
@@ -37,7 +53,8 @@ function changeCity(event) {
           <div class="date">${cityDateNow}</div>
         </div>
         <div class="time">${cityTimeNowFormatted} <small>${cityTimeNowAmPm}</small></div>
-    </div>`;
+    </div>
+    <a href="https://sc-world-clock-hw.netlify.app/">Back to all countries</a>`;
 }
 
 let citySelect = document.querySelector("#city-select");

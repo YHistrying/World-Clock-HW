@@ -59,6 +59,8 @@ footer {
 }
 
 a {
-  color: palevioletred;
+  display: inline-block;
+  margin-top: 20px;
+  color: darkmagenta;
   text-decoration: none;
 }
